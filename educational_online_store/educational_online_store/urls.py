@@ -24,6 +24,7 @@ handler404 = 'shop.views.page_not_found'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('shop/', include('shop.urls')),
+    #path('__debug__/', include("debug_toolbar.urls")),
 ]
 
 if settings.DEBUG:
