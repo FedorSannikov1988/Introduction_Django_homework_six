@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    <title> Все заказы {{ name_client }} </title>
+{% endblock %}
+
+{% block content %}
+
+    <h1 >
+        Форма/Страничка для редактирования информации о товаре:
+    </h1>
+
+        <form action="{% url 'form_for_edit_product_information' %}" method="post">
+        {% csrf_token %}
+        {{ form_for_edit_product.as_div }}
+        <input type="submit" value="Отправить">
+    </form>
+
+
+{% endblock %}

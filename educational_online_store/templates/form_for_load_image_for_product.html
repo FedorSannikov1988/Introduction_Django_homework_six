@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+    <title> Все заказы {{ name_client }} </title>
+{% endblock %}
+
+{% block content %}
+
+    <h1>
+        Форма для загрузки изображения для продукта:
+    </h1>
+
+        <!-- <form action="{% url 'form_for_load_image_for_product' %}" method="post" enctype="multipart/form-data"> -->
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Загрузить</button>
+        </form>
+
+{% endblock %}
